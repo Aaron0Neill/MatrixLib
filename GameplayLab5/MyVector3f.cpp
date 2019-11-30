@@ -44,20 +44,55 @@ void MyVector3f::normalise()
 	}
 }
 
-float MyVector3f::dotProduct(MyVector3f vec) const
+float MyVector3f::dotProduct(const MyVector3f vec) const
 {
-	return 0.0f;
+	return (m_x * vec.m_x + m_y * vec.m_y + m_z * vec.m_z);
 }
 
-MyVector3f MyVector3f::operator+(MyVector3f vec) const
+MyVector3f MyVector3f::crossProduct(const MyVector3f vec) const
+{
+	return MyVector3f((m_y * vec.m_z - vec.m_y * m_z), ((m_x * vec.m_z) - (vec.m_x * m_z)) * -1, (m_x * vec.m_y) - (vec.m_x * m_y));
+}
+
+MyVector3f MyVector3f::operator+(const MyVector3f vec) const
 {
 	return MyVector3f(m_x + vec.m_x, m_y + vec.m_y, m_z + vec.m_z);
 }
 
-MyVector3f MyVector3f::operator*(MyVector3f vec) const
+MyVector3f MyVector3f::operator-(const MyVector3f vec) const
 {
-	return MyVector3f();
+	return MyVector3f(m_x - vec.m_x, m_y - vec.m_y, m_z - vec.m_z);
 }
+
+MyVector3f MyVector3f::operator*(const float scalar) const
+{
+	return MyVector3f(m_x * scalar, m_y * scalar, m_z * scalar);
+}
+
+MyVector3f MyVector3f::operator/(const float divisor) const
+{
+	if (divisor != 0)
+		return MyVector3f(m_x / divisor, m_y / divisor, m_z / divisor);
+	else
+		return MyVector3f();
+}
+
+MyVector3f MyVector3f::operator-=(const MyVector3f vec)
+{
+	m_x -= vec.m_x;
+	m_y -= vec.m_y;
+	m_z -= vec.m_z;
+	return *this;
+}
+
+MyVector3f MyVector3f::operator+=(const MyVector3f vec) 
+{
+	m_x += vec.m_x;
+	m_y += vec.m_y;
+	m_z += vec.m_z;
+	return *this;
+}
+
 
 MyVector3f MyVector3f::operator-() const
 {

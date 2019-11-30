@@ -57,7 +57,7 @@ void MyVector2f::normalise()
 	}
 }
 
-float MyVector2f::dotProduct(MyVector2f vector) const
+float MyVector2f::dotProduct(const MyVector2f vector) const
 {
 	return (m_x * vector.m_x + m_y * vector.m_y);
 }
@@ -77,7 +77,7 @@ void MyVector2f::operator*(double scalar)
 /// </summary>
 /// <param name="vector"> the vector that is being added to the current vector </param>
 /// <returns> a new vector after the two were added together </returns>
-MyVector2f MyVector2f::operator+(MyVector2f vector) const
+MyVector2f MyVector2f::operator+(const MyVector2f vector) const
 {
 	return MyVector2f (m_x + vector.m_x, m_y + vector.m_y);
 }
@@ -87,9 +87,34 @@ MyVector2f MyVector2f::operator+(MyVector2f vector) const
 /// </summary>
 /// <param name="vector"> the vector that is going to be taken from the current vector </param>
 /// <returns> new vector after one is taken from the other </returns>
-MyVector2f MyVector2f::operator-(MyVector2f vector) const
+MyVector2f MyVector2f::operator-(const MyVector2f vector) const
 {
 	return MyVector2f(m_x - vector.m_x, m_y - vector.m_y);
+}
+
+MyVector2f MyVector2f::operator-=(const MyVector2f vector) const
+{
+	return MyVector2f(m_x - vector.m_x, m_y - vector.m_y);
+}
+
+MyVector2f MyVector2f::operator+=(const MyVector2f vector) const
+{
+	return MyVector2f(m_x + vector.m_x, m_y + vector.m_y);
+}
+
+MyVector2f MyVector2f::operator*(const double scalar) const
+{
+	return MyVector2f(m_x * scalar, m_y * scalar);
+}
+
+bool MyVector2f::operator==(const MyVector2f vector) const
+{
+	return (this->m_x == vector.m_x && this->m_y == vector.m_y);
+}
+
+bool MyVector2f::operator!=(const MyVector2f vector) const
+{
+	return !(this->operator==(vector));
 }
 
 MyVector2f MyVector2f::operator-() const

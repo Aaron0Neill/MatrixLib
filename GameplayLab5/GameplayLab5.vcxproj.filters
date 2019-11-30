@@ -21,12 +21,21 @@
     <ClCompile Include="MyVector3f.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Matrix3f.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyVector2f.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MyVector3f.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix3f.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
