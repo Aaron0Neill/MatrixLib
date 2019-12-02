@@ -131,4 +131,9 @@ std::string MyVector2f::toString() const
 	return std::string("(x: " + std::to_string(m_x) + " y: " + std::to_string(m_y) + ")");
 }
 
+std::string MyVector2f::operator<<(const MyVector2f vec) const
+{
+	return std::string("(x: " + std::to_string(vec.m_x) + " y: " + std::to_string(vec.m_y) + ")");
+}
+
 

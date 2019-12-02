@@ -126,6 +126,7 @@
     <ClCompile Include="Matrix3f.cpp" />
     <ClCompile Include="MyVector2f.cpp" />
     <ClCompile Include="MyVector3f.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Matrix3f.h" />

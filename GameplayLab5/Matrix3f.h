@@ -22,22 +22,27 @@ public:
 		float c1, float c2, float c3);
 	Matrix3f(MyVector3f a, MyVector3f b, MyVector3f c);
 
-	Matrix3f transpose(const Matrix3f m)const;
-	float determinant(const Matrix3f m)const;
+	Matrix3f transpose()const;
+	float determinant()const;
+	Matrix3f inverse()const;
+	
+	static Matrix3f translate(const MyVector3f displacement);
+	static Matrix3f scale(float const scale);
+	static Matrix3f rotateX(float const angle);
+	static Matrix3f rotateY(float const angle);
+	static Matrix3f rotateZ(float const angle);
+
 	MyVector3f row(int row)const;
 	MyVector3f column(int col)const;
-	Matrix3f inverse(const Matrix3f m)const;
-	Matrix3f rotation(float angle)const;
-	Matrix3f translate(float dx, float dy)const;
-	Matrix3f rotateX(int angle);
 
-	Matrix3f operator *(const MyVector3f vec)const;
+	MyVector3f operator *(const MyVector3f vec)const;
 	Matrix3f operator *(const float scalar)const;
 	Matrix3f operator *(const Matrix3f m)const;
 	Matrix3f operator +(const Matrix3f m)const;
 	Matrix3f operator -(const Matrix3f m)const;
 	Matrix3f operator -()const;
 	
-
+	std::string toString()const;
+	std::string operator<<(const Matrix3f matrix)const;
 };
 

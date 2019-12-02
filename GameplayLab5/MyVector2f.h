@@ -31,6 +31,7 @@ public:
 	MyVector2f operator -() const;
 
 	std::string toString() const;
+	std::string operator<<(const MyVector2f vec)const;
 	
 
 private:

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+#include <string>
 #include <math.h>
 
 class MyVector3f
@@ -23,6 +25,9 @@ public:
 	MyVector3f operator+=(const MyVector3f vec);
 
 	MyVector3f operator-()const;
+
+	std::string toString()const;
+	std::string operator<<(MyVector3f const vec)const;
 
 	float getX() const { return m_x; }
 	float getY() const { return m_y; }

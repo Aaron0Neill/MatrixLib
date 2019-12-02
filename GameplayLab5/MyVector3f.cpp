@@ -98,3 +98,13 @@ MyVector3f MyVector3f::operator-() const
 {
 	return MyVector3f(-m_x, -m_y, -m_z);
 }
+
+std::string MyVector3f::toString() const
+{
+	return { "x: " + std::to_string(m_x) + " , y: " + std::to_string(m_y) + " , z: " +std::to_string(m_z) };
+}
+
+std::string MyVector3f::operator<<(MyVector3f const vec) const
+{
+	return std::string("x: " + std::to_string(vec.m_x) + " , y: " + std::to_string(vec.m_y) + " , z: " + std::to_string(vec.m_z));
+}
