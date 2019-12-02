@@ -29,7 +29,7 @@ public:
 	Matrix3f inverse(const Matrix3f m)const;
 	Matrix3f rotation(float angle)const;
 	Matrix3f translate(float dx, float dy)const;
-
+	Matrix3f rotateX(int angle);
 
 	Matrix3f operator *(const MyVector3f vec)const;
 	Matrix3f operator *(const float scalar)const;
