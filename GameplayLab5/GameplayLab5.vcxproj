@@ -126,12 +126,14 @@
     <ClCompile Include="Matrix3f.cpp" />
     <ClCompile Include="MyVector2f.cpp" />
     <ClCompile Include="MyVector3f.cpp" />
+    <ClCompile Include="Quaternion.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Matrix3f.h" />
     <ClInclude Include="MyVector2f.h" />
     <ClInclude Include="MyVector3f.h" />
+    <ClInclude Include="Quaternion.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
