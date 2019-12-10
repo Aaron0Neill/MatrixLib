@@ -40,7 +40,7 @@ std::string Quaternion::operator<<(Quaternion q)
 
 double Quaternion::lengthSquared()const
 {
-	return x*x + y*y + z*z + w*w;
+	return (w * w + x*x + y*y + z*z);
 }
 
 double Quaternion::length()const
@@ -142,7 +142,7 @@ Quaternion Quaternion::multiply(Quaternion q)const
 
 MyVector3f Quaternion::rotate(MyVector3f pt, int angle)
 {
-	Quaternion axis = this->unitVector();
+	Quaternion axis = unitVector();
 	double angleRad = 3.14159 / 180 * angle;
 	double sa = sin(angleRad / 2.0);
 	Quaternion rotate = { cos(angleRad / 2.0), sa * axis.x, sa * axis.y, sa * axis.z };

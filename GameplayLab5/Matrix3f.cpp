@@ -95,8 +95,9 @@ Matrix3f Matrix3f::rotateY(float const angle)
 
 Matrix3f Matrix3f::rotateZ(float const angle)
 {
-	return Matrix3f(cos(angle), -sin(angle), 0,
-					sin(angle), cos(angle), 0,
+	float angleRad = 3.14159 / 180 * angle;
+	return Matrix3f(cos(angleRad), -sin(angleRad), 0,
+					sin(angleRad), cos(angleRad), 0,
 					0, 0, 1);
 }
 
